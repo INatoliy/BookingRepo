@@ -2,5 +2,6 @@
 {
     public class HostBuilderFactory
     {
+        // Какой-то код
     }
 }
