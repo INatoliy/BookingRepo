@@ -1,0 +1,23 @@
+﻿version: '3.8'
+
+services:
+  booking-service_bookings-host:
+    container_name: bookings-api
+    build:
+      context: .
+      dockerfile: src/BookingService.Booking.Api/Dockerfile
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    volumes:
+      - ./logs:/var/logs/booking-service-bookings
+    networks:
+      - booking-network
+
+volumes:
+  booking-logs:
+
+networks:
+  booking-network:
+    driver: bridge
