@@ -8,12 +8,11 @@ namespace BookingService.Booking.Api
         {
             try
             {
-                Log.Information("Starting host...");
-                CreateHostBuilder(args).Build().Run();
+                CreateHostBuilder(args).Run();
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Host terminated unexpectedly");
+                Log.Fatal(ex, "Неожиданное завершение работы хоста");
             }
             finally
             {
@@ -21,17 +20,22 @@ namespace BookingService.Booking.Api
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-    Host.CreateDefaultBuilder(args)
-        .ConfigureAppConfiguration((context, config) =>
+        public static IHost CreateHostBuilder(string[] args)
         {
-            config.AddJsonFile("appsettings.json", optional: false);
-            config.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true);
-        })
-        .UseSerilog((context, config) =>
-        {
-            config.ReadFrom.Configuration(context.Configuration);
-        })
-        .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
+            return Host.CreateDefaultBuilder(args)
+             .UseSerilog((context, services, config) =>
+             {
+                 config
+                     .ReadFrom.Configuration(context.Configuration)
+                     .ReadFrom.Services(services);
+             })
+             .ConfigureServices((context, services) =>
+             {
+                  var startup = new Startup(context.Configuration);
+                  startup.ConfigureServices(services);
+             })
+             .ConfigureWebHostDefaults(webBuilder =>
+             webBuilder.UseStartup<Startup>()).Build();
+        }
     }
-    }
+}

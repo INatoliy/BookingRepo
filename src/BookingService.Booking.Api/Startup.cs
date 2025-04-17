@@ -5,10 +5,10 @@ namespace BookingService.Booking.Api
 {
     public class Startup
     {
-        private IConfiguration _configuration { get; }
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
-            _configuration = configuration;
+            Configuration = configuration;
         }
         public void ConfigureServices(IServiceCollection services)
         {
@@ -31,7 +31,7 @@ namespace BookingService.Booking.Api
             }
             else
             {
-                app.UseExceptionHandler("/error"); // Обработка ошибок в Production
+                app.UseExceptionHandler("/error");
             }
 
             app.UseStatusCodePages();
@@ -41,7 +41,7 @@ namespace BookingService.Booking.Api
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-                options.RoutePrefix = string.Empty;
+                options.RoutePrefix = "swagger";
             });
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
