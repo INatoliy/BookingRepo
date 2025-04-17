@@ -23,19 +23,17 @@ namespace BookingService.Booking.Api
         public static IHost CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-             .UseSerilog((context, services, config) =>
-             {
-                 config
-                     .ReadFrom.Configuration(context.Configuration)
-                     .ReadFrom.Services(services);
-             })
-             .ConfigureServices((context, services) =>
-             {
-                  var startup = new Startup(context.Configuration);
-                  startup.ConfigureServices(services);
-             })
-             .ConfigureWebHostDefaults(webBuilder =>
-             webBuilder.UseStartup<Startup>()).Build();
+                .UseSerilog((context, services, config) =>
+                {
+                    config
+                        .ReadFrom.Configuration(context.Configuration)
+                        .ReadFrom.Services(services);
+                })
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                })
+                .Build();
         }
     }
 }
