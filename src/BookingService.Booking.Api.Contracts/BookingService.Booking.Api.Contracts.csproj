@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Bookings\**" />
+    <EmbeddedResource Remove="Bookings\**" />
+    <None Remove="Bookings\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BookingService.Booking.Application.Contracts\BookingService.Booking.Application.Contracts.csproj" />
   </ItemGroup>
 

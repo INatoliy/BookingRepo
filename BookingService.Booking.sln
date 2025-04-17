@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Doma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain.Contracts", "src\BookingService.Booking.Domain.Contracts\BookingService.Booking.Domain.Contracts.csproj", "{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Booking.Api", "src\BookingService.Booking.Api\BookingService.Booking.Api.csproj", "{C9EA5841-4739-4942-A5CA-B857C205CCAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Api", "src\BookingService.Booking.Api\BookingService.Booking.Api.csproj", "{C9EA5841-4739-4942-A5CA-B857C205CCAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
