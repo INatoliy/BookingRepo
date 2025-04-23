@@ -12,6 +12,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Application", "src\BookingService.Booking.Application\BookingService.Booking.Application.csproj", "{49C4EEB5-DB84-4704-8ACB-A624264A8C3D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Application.Contracts", "src\BookingService.Booking.Application.Contracts\BookingService.Booking.Application.Contracts.csproj", "{94E36DE7-24D3-4062-8158-CE7201C1B47F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD} = {C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain", "src\BookingService.Booking.Domain\BookingService.Booking.Domain.csproj", "{D0BFED4B-74B3-4188-8B97-60FB5760F825}"
 EndProject

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookingService.Booking.Domain.Contracts.Models
 {
-    enum BookingStatus
+    public enum BookingStatus
     {
         AwaitsConfirmation,  // Ожидает подтверждения
         Confirmed,           // Подтверждено 

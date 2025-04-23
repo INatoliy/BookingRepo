@@ -6,11 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Commands\" />
-    <Folder Include="Queries\" />
-    <Folder Include="Queries\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BookingService.Booking.Domain.Contracts\BookingService.Booking.Domain.Contracts.csproj" />
+	</ItemGroup>
 
 </Project>

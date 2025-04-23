@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookingService.Booking.Application.Contracts.Commands
 {
-    class CreateBookingRequest
+    public class CreateBookingRequest
     {
         public long UserId { get; set; }
         public long ResourceId { get; set; }
