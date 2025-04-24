@@ -12,9 +12,9 @@ namespace BookingService.Booking.Application.Contracts.Interfaces
 {
     public interface IBookingsService
     {
-        Task<long> CreateAsync(CreateBookingCommand command);
+        Task<long> CreateBookingAsync(CreateBookingCommand command);
         Task<BookingDto> GetByIdAsync(GetBookingByIdQuery idQuery);
-        Task CancelAsync(CancelBookingCommand command);
+        Task CancelBookingAsync(CancelBookingCommand command);
         Task<BookingDto[]> GetByFilterAsync(GetBookingsByFilterQuery filterQuery);
         Task<BookingStatus> GetStatusByIdAsync(GetBookingStatusByIdQuery idQuery);
 

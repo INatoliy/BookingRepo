@@ -17,18 +17,19 @@ namespace BookingService.Booking.Application
     class BookingsService : IBookingsService
     {
 
-        public Task<long> CreateAsync(CreateBookingCommand command)
+        public Task<long> CreateBookingAsync(CreateBookingCommand command)
         {
             if (command.UserId <= 0 || command.ResourceId <= 0)
                 throw new ValidationException("UserId и ResourceId должны быть больше 0.");
 
-            throw new ValidationException("Заглушка");
+            var bookingId = new Random().NextInt64(1000);
+            return Task.FromResult(bookingId);
         }
         public Task<BookingDto> GetByIdAsync(GetBookingByIdQuery idQuery)
         {
             throw new NotImplementedException();
         }
-        public Task CancelAsync(CancelBookingCommand command)
+        public Task CancelBookingAsync(CancelBookingCommand command)
         {
             if (command.BookingId <= 0)
                 throw new DomainException("Некорректный идентификатор бронирования");
