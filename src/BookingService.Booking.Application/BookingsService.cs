@@ -22,6 +22,7 @@ namespace BookingService.Booking.Application
             if (command.UserId <= 0 || command.ResourceId <= 0)
                 throw new ValidationException("UserId и ResourceId должны быть больше 0.");
 
+            // Имитация работы
             var bookingId = new Random().NextInt64(1000);
             return Task.FromResult(bookingId);
         }
@@ -34,7 +35,7 @@ namespace BookingService.Booking.Application
             if (command.BookingId <= 0)
                 throw new DomainException("Некорректный идентификатор бронирования");
 
-            throw new DomainException("Заглушка");
+            return null;
         }
         public Task<BookingDto[]> GetByFilterAsync(GetBookingsByFilterQuery filterQuery)
         {

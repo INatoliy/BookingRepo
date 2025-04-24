@@ -52,7 +52,11 @@ namespace BookingService.Booking.Api.Controllers
                 ResourceId = request.ResourceId,
                 Status = request.Status != null ? Enum.Parse<BookingStatus>(request.Status) : null,
                 StartDate = request.StartDate,
-                EndDate = request.EndDate
+                EndDate = request.EndDate,
+                PageSize = request.PageSize,
+                PageNumber = request.PageNumber,
+
+
             };
 
             var bookings = await _bookingsService.GetByFilterAsync(query);
@@ -74,22 +78,6 @@ namespace BookingService.Booking.Api.Controllers
             var status = await _bookingsService.GetStatusByIdAsync(query);
             return Ok(status.ToString());
         }
-
-        // Маппинг
-        private static BookingData MapToBookingData(BookingDto bookingDto)
-        {
-            return new BookingData
-            {
-                Id = bookingDto.Id,
-                Status = bookingDto.Status.ToString(),
-                UserId = bookingDto.UserId,
-                ResourceId = bookingDto.ResourceId,
-                StartDate = bookingDto.StartDate,
-                EndDate = bookingDto.EndDate,
-                CreatedDate = bookingDto.CreatedDate
-            };
-        }
-
     }
 }
 
