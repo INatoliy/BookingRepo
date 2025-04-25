@@ -1,6 +1,5 @@
-﻿namespace BookingService.Booking.Api.Contracts.Booking.Requests;
-
-public class CreateBookingRequest
+﻿namespace BookingService.Booking.Application.Contracts.Commands;
+public class CreateBookingCommand
 {
     public long UserId { get; set; }
     public long ResourceId { get; set; }
