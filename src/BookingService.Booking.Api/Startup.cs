@@ -1,10 +1,9 @@
 ﻿using BookingService.Booking.Application;
-using BookingService.Booking.Domain.Contracts.Exceptions;
 using BookingService.Booking.Application.Contracts.Exceptions;
+using BookingService.Booking.Domain.Contracts.Exceptions;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
-using Serilog;
 
 namespace BookingService.Booking.Api
 {
@@ -32,7 +31,7 @@ namespace BookingService.Booking.Api
             {
                 options.MapToStatusCode<ValidationException>(StatusCodes.Status400BadRequest);
                 options.MapToStatusCode<DomainException>(StatusCodes.Status402PaymentRequired);
-              
+
                 options.Map<ValidationException>(ex => new ProblemDetails
                 {
                     Status = 400,

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BookingService.Booking.Application.Contracts.Queries;
 
-namespace BookingService.Booking.Application.Contracts.Queries
+public class GetBookingByIdQuery
 {
-    public class GetBookingByIdQuery
-    {
-        public long BookingId { get; set; } 
-    }
+    public long BookingId { get; set; }
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BookingService.Booking.Domain.Contracts.Models;
 
-namespace BookingService.Booking.Domain.Bookings
+namespace BookingService.Booking.Domain.Bookings;
+
+class BookingAggregate
 {
-    internal class BookingAggregate
-    {
-    }
+ 
 }

@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BookingService.Booking.Domain.Contracts.Exceptions;
 
-namespace BookingService.Booking.Domain.Contracts.Exceptions
+public class DomainException : Exception
 {
-    public class DomainException : Exception
+    public DomainException(string message) : base(message)
     {
-        public DomainException(string message) : base(message)
-        {
-
-        }
     }
 }

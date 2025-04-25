@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace BookingService.Booking.Application.Dates;
 
-namespace BookingService.Booking.Application.Dates
+class DefaultCurrentDateTimeProvider : ICurrentDateTimeProvider
 {
-    class DefaultCurrentDateTimeProvider : ICurrentDateTimeProvider
-    {
-    }
+    public DateTimeOffset CurrentDateTime { get; } = DateTimeOffset.UtcNow;
 }
