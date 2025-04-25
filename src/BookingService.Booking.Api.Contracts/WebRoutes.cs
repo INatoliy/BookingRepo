@@ -1,4 +1,4 @@
-﻿namespace BookingService.Booking.Api.Contracts.Bookings;
+﻿namespace BookingService.Booking.Api.Contracts;
 
 public static class WebRoutes
 {

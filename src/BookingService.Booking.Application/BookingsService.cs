@@ -7,7 +7,6 @@ using BookingService.Booking.Domain.Contracts.Exceptions;
 using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application;
-
 internal class BookingsService : IBookingsService
 {
     public Task<long> CreateBookingAsync(CreateBookingCommand command)

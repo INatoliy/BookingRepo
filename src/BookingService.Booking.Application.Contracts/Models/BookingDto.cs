@@ -1,7 +1,6 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application.Contracts.Models;
-
 public class BookingDto
 {
     public long Id { get; set; }
