@@ -1,4 +1,4 @@
-﻿namespace BookingService.Booking.Application.Contracts.Requests;
+﻿namespace BookingService.Booking.Api.Contracts.Booking.Requests;
 
 public class CreateBookingRequest
 {

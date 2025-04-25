@@ -1,5 +1,5 @@
 ﻿using BookingService.Booking.Api.Contracts;
-using BookingService.Booking.Application.Contracts.Requests;
+using BookingService.Booking.Api.Contracts.Booking.Requests;
 using BookingService.Booking.Application.Contracts.Commands;
 using BookingService.Booking.Application.Contracts.Interfaces;
 using BookingService.Booking.Application.Contracts.Queries;
