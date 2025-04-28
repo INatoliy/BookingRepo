@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F0592DF-1AA7-4E82-8317-D395DF447436}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F5BEA94C-74B5-4355-8EDD-2EFB4D26BAE0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{F5BEA94C-74B5-4355-8EDD-2EFB4D26BAE0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Api.Contracts", "src\BookingService.Booking.Api.Contracts\BookingService.Booking.Api.Contracts.csproj", "{843F58A9-7C03-4A91-9653-870CA20DED03}"
 EndProject
@@ -21,6 +21,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain.Contracts", "src\BookingService.Booking.Domain.Contracts\BookingService.Booking.Domain.Contracts.csproj", "{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Api", "src\BookingService.Booking.Api\BookingService.Booking.Api.csproj", "{C9EA5841-4739-4942-A5CA-B857C205CCAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain.UnitTests", "tests\BookingService.Booking.Domain.UnitTests\BookingService.Booking.Domain.UnitTests.csproj", "{EE09596B-2248-476C-9137-B57AE1307301}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD} = {C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}
+		{D0BFED4B-74B3-4188-8B97-60FB5760F825} = {D0BFED4B-74B3-4188-8B97-60FB5760F825}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +58,10 @@ Global
 		{C9EA5841-4739-4942-A5CA-B857C205CCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9EA5841-4739-4942-A5CA-B857C205CCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9EA5841-4739-4942-A5CA-B857C205CCAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE09596B-2248-476C-9137-B57AE1307301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE09596B-2248-476C-9137-B57AE1307301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE09596B-2248-476C-9137-B57AE1307301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE09596B-2248-476C-9137-B57AE1307301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +73,7 @@ Global
 		{D0BFED4B-74B3-4188-8B97-60FB5760F825} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
 		{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
 		{C9EA5841-4739-4942-A5CA-B857C205CCAF} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
+		{EE09596B-2248-476C-9137-B57AE1307301} = {F5BEA94C-74B5-4355-8EDD-2EFB4D26BAE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52D488B1-715C-409B-94E5-6E425A00CCA0}

@@ -1,5 +1,6 @@
 ﻿namespace BookingService.Booking.Application.Dates;
 class DefaultCurrentDateTimeProvider : ICurrentDateTimeProvider
 {
-    public DateTimeOffset CurrentDateTime { get; } = DateTimeOffset.UtcNow;
+    public DateTimeOffset LocalNow => DateTimeOffset.Now.ToLocalTime();
+    public DateTimeOffset UtcNow => DateTimeOffset.UtcNow;
 }

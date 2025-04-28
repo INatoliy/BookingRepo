@@ -1,5 +1,6 @@
 ﻿namespace BookingService.Booking.Application.Dates;
-interface ICurrentDateTimeProvider
+public interface ICurrentDateTimeProvider
 {
-    DateTimeOffset CurrentDateTime { get; }
+    DateTimeOffset LocalNow { get; }
+    DateTimeOffset UtcNow { get; }
 }
