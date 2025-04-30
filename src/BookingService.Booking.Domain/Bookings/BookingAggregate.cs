@@ -1,4 +1,6 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
+using BookingService.Booking.Domain.Contracts.Exceptions;
+;
 
 namespace BookingService.Booking.Domain.Bookings;
 public class BookingAggregate
@@ -32,13 +34,13 @@ public class BookingAggregate
 
     public void Confirm()
     {
-        if (Status != BookingStatus.AwaitsConfirmation) throw new InvalidOperationException("Подтвердить можно только ожидающее бронирование.");
+        if (Status != BookingStatus.AwaitsConfirmation) throw new DomainException("Подтвердить можно только ожидающее бронирование.");
         Status = BookingStatus.Confirmed;
     }
 
     public void Cancel()
     {
-        if (Status == BookingStatus.Cancelled) throw new InvalidOperationException("Бронирование уже отменено");
+        if (Status == BookingStatus.Cancelled) throw new DomainException("Бронирование уже отменено");
         Status = BookingStatus.Cancelled;
     }
 }

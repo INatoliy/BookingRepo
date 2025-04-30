@@ -1,4 +1,5 @@
 using BookingService.Booking.Domain.Bookings;
+using BookingService.Booking.Domain.Contracts.Exceptions;
 using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Domain.UnitTests
@@ -53,7 +54,7 @@ namespace BookingService.Booking.Domain.UnitTests
 
             bookingAggregate.Confirm();
 
-            Assert.Throws<InvalidOperationException>(bookingAggregate.Confirm);
+            Assert.Throws<DomainException>(bookingAggregate.Confirm);
         }
 
         [Fact]
@@ -73,7 +74,7 @@ namespace BookingService.Booking.Domain.UnitTests
 
             bookingAggregate.Cancel();
 
-            Assert.Throws<InvalidOperationException>(bookingAggregate.Cancel);
+            Assert.Throws<DomainException>(bookingAggregate.Cancel);
         }
     }
 }
