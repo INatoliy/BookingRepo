@@ -33,7 +33,7 @@ namespace BookingService.Booking.Domain.UnitTests
             var endDate = DateOnly.Parse(end);
             var now = DateTimeOffset.UtcNow;
 
-            Assert.Throws<ArgumentException>(() =>
+            Assert.Throws<DomainException>(() =>
                 BookingAggregate.Initialize(userId, resourceId, startDate, endDate, now));
         }
 

@@ -25,9 +25,9 @@ public class BookingAggregate
 
     public static BookingAggregate Initialize(long userId, long resourceId, DateOnly startDate, DateOnly endDate, DateTimeOffset now)
     {
-        if (userId <= 0) throw new ArgumentException("Индетификатор пользовотеля должен быть больше 0.");
-        if (resourceId <= 0) throw new ArgumentException("Индетификатор ресурса должен быть больше 0.");
-        if (startDate >= endDate) throw new ArgumentException("Дата начала бронирования не может быть до даты конца.");
+        if (userId <= 0) throw new DomainException("Индетификатор пользовотеля должен быть больше 0.");
+        if (resourceId <= 0) throw new DomainException("Индетификатор ресурса должен быть больше 0.");
+        if (startDate >= endDate) throw new DomainException("Дата начала бронирования не может быть до даты конца.");
     
         return new BookingAggregate(userId, resourceId, startDate, endDate, now);
     }
