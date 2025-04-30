@@ -1,6 +1,6 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
 using BookingService.Booking.Domain.Contracts.Exceptions;
-;
+
 
 namespace BookingService.Booking.Domain.Bookings;
 public class BookingAggregate
