@@ -47,9 +47,9 @@ public class BookingsController : ControllerBase
     {
         var query = new GetBookingsByFilterQuery
         {
+            Status = request.Status != null ? Enum.Parse<BookingStatus>(request.Status) : null,
             UserId = request.UserId,
             ResourceId = request.ResourceId,
-            Status = request.Status != null ? Enum.Parse<BookingStatus>(request.Status) : null,
             StartDate = request.StartDate,
             EndDate = request.EndDate,
             PageSize = request.PageSize,
