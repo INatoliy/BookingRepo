@@ -4,6 +4,7 @@ using BookingService.Booking.Application.Contracts.Queries;
 using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application.Contracts.Interfaces;
+
 public interface IBookingsService
 {
     Task<long> CreateBookingAsync(CreateBookingCommand command);

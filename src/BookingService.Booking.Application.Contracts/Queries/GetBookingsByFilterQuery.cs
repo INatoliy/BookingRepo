@@ -1,6 +1,7 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application.Contracts.Queries;
+
 public class GetBookingsByFilterQuery
 {
     public BookingStatus? Status { get; set; }

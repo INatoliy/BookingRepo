@@ -9,9 +9,11 @@ using BookingService.Booking.Domain.Contracts.Exceptions;
 using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application;
- class BookingsService : IBookingsService
+
+internal class BookingsService : IBookingsService
 {
     private readonly ICurrentDateTimeProvider _currentDateTimeProvider;
+
     public Task<long> CreateBookingAsync(CreateBookingCommand command)
     {
         if (command.UserId <= 0 || command.ResourceId <= 0)
@@ -20,7 +22,7 @@ namespace BookingService.Booking.Application;
         var now = _currentDateTimeProvider.UtcNow;
         var bookingAggregate = BookingAggregate.Initialize(
             command.UserId, command.ResourceId, command.StartDate, command.EndDate, now);
-        
+
         // Имитация работы
         var bookingId = new Random().NextInt64(1000);
         return Task.FromResult(bookingId);
@@ -35,7 +37,7 @@ namespace BookingService.Booking.Application;
     {
         if (command.BookingId <= 0)
             throw new DomainException("Некорректный идентификатор бронирования");
-        
+
         return null;
     }
 
