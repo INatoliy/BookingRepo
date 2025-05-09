@@ -56,9 +56,9 @@ namespace BookingService.Booking.Persistence.Migrations
                         .HasColumnName("user_id");
 
                     b.HasKey("Id")
-                        .HasName("pk_booking_service_bookings");
+                        .HasName("pk_bookings");
 
-                    b.ToTable("booking_service_bookings", (string)null);
+                    b.ToTable("bookings", (string)null);
                 });
 #pragma warning restore 612, 618
         }

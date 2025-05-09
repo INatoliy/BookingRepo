@@ -7,13 +7,13 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BookingService.Booking.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "booking_service_bookings",
+                name: "bookings",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
@@ -27,7 +27,7 @@ namespace BookingService.Booking.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("pk_booking_service_bookings", x => x.id);
+                    table.PrimaryKey("pk_bookings", x => x.id);
                 });
         }
 
@@ -35,7 +35,7 @@ namespace BookingService.Booking.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "booking_service_bookings");
+                name: "bookings");
         }
     }
 }

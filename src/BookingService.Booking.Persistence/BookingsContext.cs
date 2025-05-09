@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookingService.Booking.Persistence;
 
-internal class BookingsContext : DbContext
+public class BookingsContext : DbContext
 {
     public BookingsContext(DbContextOptions<BookingsContext> options) : base(options)
     {

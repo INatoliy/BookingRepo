@@ -8,9 +8,9 @@ public class BookingAggregateConfiguration : IEntityTypeConfiguration<BookingAgg
 {
     public void Configure(EntityTypeBuilder<BookingAggregate> builder)
     {
-        builder.ToTable("booking_service_bookings");
+        builder.ToTable("bookings");
 
-        builder.HasKey(x => x.Id).HasName("pk_booking_service_bookings");
+        builder.HasKey(x => x.Id).HasName("pk_bookings");
 
         builder.Property(x => x.Id).HasColumnName("id");
         builder.Property(x => x.Status).HasColumnName("status");
