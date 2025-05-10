@@ -21,10 +21,18 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain.Contracts", "src\BookingService.Booking.Domain.Contracts\BookingService.Booking.Domain.Contracts.csproj", "{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Api", "src\BookingService.Booking.Api\BookingService.Booking.Api.csproj", "{C9EA5841-4739-4942-A5CA-B857C205CCAF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D} = {C52A0ED0-8CB4-4E61-A022-21390AA7D92D}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingService.Booking.Domain.UnitTests", "tests\BookingService.Booking.Domain.UnitTests\BookingService.Booking.Domain.UnitTests.csproj", "{EE09596B-2248-476C-9137-B57AE1307301}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD} = {C095F573-78D8-4CD5-B6D2-224C2A1DB8AD}
+		{D0BFED4B-74B3-4188-8B97-60FB5760F825} = {D0BFED4B-74B3-4188-8B97-60FB5760F825}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingService.Booking.Persistence", "src\BookingService.Booking.Persistence\BookingService.Booking.Persistence.csproj", "{C52A0ED0-8CB4-4E61-A022-21390AA7D92D}"
+	ProjectSection(ProjectDependencies) = postProject
 		{D0BFED4B-74B3-4188-8B97-60FB5760F825} = {D0BFED4B-74B3-4188-8B97-60FB5760F825}
 	EndProjectSection
 EndProject
@@ -62,6 +70,10 @@ Global
 		{EE09596B-2248-476C-9137-B57AE1307301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE09596B-2248-476C-9137-B57AE1307301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE09596B-2248-476C-9137-B57AE1307301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +86,7 @@ Global
 		{C095F573-78D8-4CD5-B6D2-224C2A1DB8AD} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
 		{C9EA5841-4739-4942-A5CA-B857C205CCAF} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
 		{EE09596B-2248-476C-9137-B57AE1307301} = {F5BEA94C-74B5-4355-8EDD-2EFB4D26BAE0}
+		{C52A0ED0-8CB4-4E61-A022-21390AA7D92D} = {4F0592DF-1AA7-4E82-8317-D395DF447436}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52D488B1-715C-409B-94E5-6E425A00CCA0}

@@ -1,6 +1,7 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application.Contracts.Models;
+
 public class BookingDto
 {
     public long Id { get; set; }
@@ -9,5 +10,5 @@ public class BookingDto
     public long ResourceId { get; set; }
     public DateOnly StartDate { get; set; }
     public DateOnly EndDate { get; set; }
-    public DateTimeOffset CreatedDate { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
 }

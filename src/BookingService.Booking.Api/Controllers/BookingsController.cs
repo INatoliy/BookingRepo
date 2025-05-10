@@ -7,6 +7,7 @@ using BookingService.Booking.Domain.Contracts.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingService.Booking.Api.Controllers;
+
 [Route(WebRoutes.BasePath)]
 [ApiController]
 public class BookingsController : ControllerBase

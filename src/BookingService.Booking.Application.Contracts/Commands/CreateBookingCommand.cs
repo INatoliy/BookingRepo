@@ -1,4 +1,5 @@
 ﻿namespace BookingService.Booking.Application.Contracts.Commands;
+
 public class CreateBookingCommand
 {
     public long UserId { get; set; }
