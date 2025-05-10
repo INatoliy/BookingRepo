@@ -1,6 +1,7 @@
 ﻿using BookingService.Booking.Application;
 using BookingService.Booking.Application.Contracts.Exceptions;
 using BookingService.Booking.Domain.Contracts.Exceptions;
+using BookingService.Booking.Persistence;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
@@ -16,10 +17,15 @@ public class Startup
 
     private IConfiguration Configuration { get; }
 
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
         services.AddApplication();
+        
+        var connectionString = Configuration.GetConnectionString("BookingsContext");
+        services.AddPersistence(connectionString); 
+       
         services.AddSwaggerGen(s =>
         {
             s.SwaggerDoc("v1", new OpenApiInfo

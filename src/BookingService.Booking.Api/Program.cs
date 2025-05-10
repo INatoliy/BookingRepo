@@ -12,7 +12,7 @@ public class Program
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Неожиданное завершение работы хоста");
+            Log.Fatal(ex, "Экстренное завершение работы хоста");
         }
         finally
         {

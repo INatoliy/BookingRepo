@@ -6,14 +6,13 @@ namespace BookingService.Booking.Persistence;
 public class UnitOfWork : IUnitOfWOrk
 {
     private readonly BookingsContext _dbContext;
+    public IBookingsRepository BookingRepository { get; }
 
     public UnitOfWork(BookingsContext dbContext, IBookingsRepository bookingRepository)
     {
         _dbContext = dbContext;
         BookingRepository = bookingRepository;
     }
-
-    public IBookingsRepository BookingRepository { get; }
 
     public async Task CommitAsync(CancellationToken cancellationToken = default)
     {

@@ -6,11 +6,11 @@ namespace BookingService.Booking.Persistence;
 
 public class BookingsContext : DbContext
 {
+    public DbSet<BookingAggregate> Bookings { get; set; }
     public BookingsContext(DbContextOptions<BookingsContext> options) : base(options)
     {
-    }
 
-    public DbSet<BookingAggregate> Bookings { get; set; }
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

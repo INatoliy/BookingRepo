@@ -1,20 +1,60 @@
-﻿version: '3.8'
-
+﻿name: mypetproject
 services:
-  booking-service_bookings-host:
-    container_name: bookings-api
-    build:
-      context: .
-      dockerfile: ./src/BookingService.Booking.Api/Dockerfile
+  # Основная БД
+  booking-service_bookings-db:
+    image: postgres:latest
+    container_name: bookings-db
     ports:
-      - "8080:80"
+      - "5433:5432"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      POSTGRES_DB: bookings
+      POSTGRES_USER: bookings_admin
+      POSTGRES_PASSWORD: admin_bookings
+      PGDATA: /data/postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookings_admin -d booking_service_bookings"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
     volumes:
-      - ./Logs:/var/logs/booking-service-bookings
+      - booking-db-data:/data/postgres
     networks:
       - booking-network
 
-networks: 
+  # Сервис для миграций
+  booking-service_migrations:
+    build:
+      context: .  # Путь к корню проекта (где лежит .sln)
+      dockerfile: src/BookingService.Booking.Api/Dockerfile
+    command: dotnet ef database update --project src/BookingService.Booking.Persistence
+    environment:
+      - ConnectionStrings__BookingsContext=Host=booking-service_bookings-db;Port=5432;Database=bookings;Username=bookings_admin;Password=admin_bookings
+    depends_on:
+      booking-service_bookings-db:
+        condition: service_healthy
+    networks:
+      - booking-network
+
+  # Основное приложение
+  booking-service_bookings-host:
+    build:
+      context: .
+      dockerfile: src/BookingService.Booking.Api/Dockerfile
+    container_name: bookings-host
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__BookingsContext=Host=booking-service_bookings-db;Port=5432;Database=bookings;Username=bookings_admin;Password=admin_bookings
+    depends_on:
+      booking-service_migrations:
+        condition: service_completed_successfully  # Ждем успеха миграций
+    networks:
+      - booking-network
+
+volumes:
+  booking-db-data:
+
+networks:
   booking-network:
     driver: bridge
