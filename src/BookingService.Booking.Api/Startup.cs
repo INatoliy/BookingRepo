@@ -21,7 +21,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddApplication();
+        services.AddApplication(Configuration);
         
         var connectionString = Configuration.GetConnectionString("BookingsContext");
         services.AddPersistence(connectionString); 

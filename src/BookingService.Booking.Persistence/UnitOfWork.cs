@@ -3,15 +3,15 @@ using BookingService.Booking.Domain.Bookings;
 
 namespace BookingService.Booking.Persistence;
 
-public class UnitOfWork : IUnitOfWOrk
+public class UnitOfWork : IUnitOfWork
 {
     private readonly BookingsContext _dbContext;
     public IBookingsRepository BookingRepository { get; }
 
-    public UnitOfWork(BookingsContext dbContext, IBookingsRepository bookingRepository)
+    public UnitOfWork(BookingsContext dbContext, IBookingsRepository bookingsRepository)
     {
         _dbContext = dbContext;
-        BookingRepository = bookingRepository;
+        BookingRepository = bookingsRepository;
     }
 
     public async Task CommitAsync(CancellationToken cancellationToken = default)

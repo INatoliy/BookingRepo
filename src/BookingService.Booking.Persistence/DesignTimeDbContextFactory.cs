@@ -12,7 +12,7 @@ internal class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<Bookings
 
         var configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json", false, true)
+            .AddJsonFile("appsettings.Persistence.json", false, true)
             .Build();
 
         var connectionString = configuration.GetConnectionString(nameof(BookingsContext));

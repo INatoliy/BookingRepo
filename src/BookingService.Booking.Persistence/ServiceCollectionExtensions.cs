@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
         if (string.IsNullOrWhiteSpace(connectionString)) throw new ArgumentNullException(nameof(connectionString));
 
         services.AddScoped<IBookingsRepository, BookingsRepository>();
-        services.AddScoped<IUnitOfWOrk, UnitOfWork>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         services.AddDbContext<BookingsContext>((ctx, context) =>
         {

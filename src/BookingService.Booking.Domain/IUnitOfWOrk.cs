@@ -2,7 +2,7 @@ using BookingService.Booking.Domain.Bookings;
 
 namespace BookingService.Booking.Domain;
 
-public interface IUnitOfWOrk
+public interface IUnitOfWork
 {
     public IBookingsRepository BookingRepository { get; }
     public Task CommitAsync(CancellationToken cancellationToken = default);
