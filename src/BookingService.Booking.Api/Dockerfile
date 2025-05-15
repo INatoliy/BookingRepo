@@ -1,20 +1,21 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 8081
+EXPOSE 80 
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/BookingService.Booking.Api/BookingService.Booking.Api.csproj", "src/BookingService.Booking.Api/"]
-COPY ["src/BookingService.Booking.Api.Contracts/BookingService.Booking.Api.Contracts.csproj", "src/BookingService.Booking.Api.Contracts/"]
-COPY ["src/BookingService.Booking.Application.Contracts/BookingService.Booking.Application.Contracts.csproj", "src/BookingService.Booking.Application.Contracts/"]
-COPY ["src/BookingService.Booking.Application/BookingService.Booking.Application.csproj", "src/BookingService.Booking.Application/"]
-COPY ["src/BookingService.Booking.Domain/BookingService.Booking.Domain.csproj", "src/BookingService.Booking.Domain/"]
-COPY ["src/BookingService.Booking.Domain.Contracts/BookingService.Booking.Domain.Contracts.csproj", "src/BookingService.Booking.Domain.Contracts/"]
-RUN dotnet restore "src/BookingService.Booking.Api/BookingService.Booking.Api.csproj"
+COPY ["BookingService.Booking.Api/BookingService.Booking.Api.csproj", "BookingService.Booking.Api/"]
+COPY ["BookingService.Booking.Api.Contracts/BookingService.Booking.Api.Contracts.csproj", "BookingService.Booking.Api.Contracts/"]
+COPY ["BookingService.Booking.Application.Contracts/BookingService.Booking.Application.Contracts.csproj", "BookingService.Booking.Application.Contracts/"]
+COPY ["BookingService.Booking.Application/BookingService.Booking.Application.csproj", "BookingService.Booking.Application/"]
+COPY ["BookingService.Booking.Domain/BookingService.Booking.Domain.csproj", "BookingService.Booking.Domain/"]
+COPY ["BookingService.Booking.Domain.Contracts/BookingService.Booking.Domain.Contracts.csproj", "BookingService.Booking.Domain.Contracts/"]
+COPY ["BookingService.Booking.Domain.Contracts/BookingService.Booking.Persistence.csproj", "BookingService.Booking.Persistence/"]
+RUN dotnet restore "BookingService.Booking.Api/BookingService.Booking.Api.csproj"
 COPY . .
-WORKDIR "/src/src/BookingService.Booking.Api"
+WORKDIR "/src/BookingService.Booking.Api"
 RUN dotnet build "BookingService.Booking.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish

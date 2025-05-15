@@ -10,20 +10,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.5.1"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0"/>
-        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6"/>
-        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0"/>
-        <PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0"/>
-        <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0"/>
-        <PackageReference Include="Serilog.Sinks.File" Version="6.0.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1"/>
+        <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.5.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="9.0.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+        <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\BookingService.Booking.Api.Contracts\BookingService.Booking.Api.Contracts.csproj"/>
-        <ProjectReference Include="..\BookingService.Booking.Application\BookingService.Booking.Application.csproj"/>
-        <ProjectReference Include="..\BookingService.Booking.Persistence\BookingService.Booking.Persistence.csproj"/>
+        <ProjectReference Include="..\BookingService.Booking.Api.Contracts\BookingService.Booking.Api.Contracts.csproj" />
+        <ProjectReference Include="..\BookingService.Booking.Application\BookingService.Booking.Application.csproj" />
+        <ProjectReference Include="..\BookingService.Booking.Persistence\BookingService.Booking.Persistence.csproj" />
     </ItemGroup>
 
     <ItemGroup>

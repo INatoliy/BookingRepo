@@ -1,5 +1,3 @@
-using BookingService.Booking.Application.Contracts.Models;
-using BookingService.Booking.Application.Contracts.Queries;
 using BookingService.Booking.Domain.Bookings;
 using BookingService.Booking.Domain.Contracts.Models;
 using Microsoft.EntityFrameworkCore;

@@ -21,11 +21,11 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddApplication(Configuration);
-        
+        services.AddApplication();
+
         var connectionString = Configuration.GetConnectionString("BookingsContext");
-        services.AddPersistence(connectionString); 
-       
+        services.AddPersistence(connectionString);
+
         services.AddSwaggerGen(s =>
         {
             s.SwaggerDoc("v1", new OpenApiInfo

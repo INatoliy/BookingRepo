@@ -1,20 +1,16 @@
 using BookingService.Booking.Domain;
-using BookingService.Booking.Domain.Bookings;
 
 namespace BookingService.Booking.Persistence;
 
 public class UnitOfWork : IUnitOfWork
 {
     private readonly BookingsContext _dbContext;
-    public IBookingsRepository BookingRepository { get; }
-
-    public UnitOfWork(BookingsContext dbContext, IBookingsRepository bookingsRepository)
+    public UnitOfWork(BookingsContext dbContext)
     {
         _dbContext = dbContext;
-        BookingRepository = bookingsRepository;
     }
 
-    public async Task CommitAsync(CancellationToken cancellationToken = default)
+    public async Task CommitAsync(CancellationToken cancellationToken)
     {
         await _dbContext.SaveChangesAsync(cancellationToken);
     }

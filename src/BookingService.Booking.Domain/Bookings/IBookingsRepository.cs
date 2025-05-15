@@ -8,12 +8,12 @@ public interface IBookingsRepository
     Task<BookingAggregate?> GetByIdAsync(long id, CancellationToken cancellationToken);
     Task UpdateAsync(BookingAggregate aggregate, CancellationToken cancellationToken);
     Task<List<BookingAggregate>> GetByFilterAsync(
-        BookingStatus? status, 
-        long? userId, 
+        BookingStatus? status,
+        long? userId,
         long? resourceId,
         DateOnly? startDate,
-        DateOnly? endDate, 
-        int pageSize, 
-        int pageNumber, 
+        DateOnly? endDate,
+        int pageSize,
+        int pageNumber,
         CancellationToken cancellationToken);
 }
