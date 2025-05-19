@@ -1,6 +1,7 @@
 ﻿using BookingService.Booking.Domain.Contracts.Models;
 
 namespace BookingService.Booking.Application.Contracts.Queries;
+
 public class GetBookingsByFilterQuery
 {
     public BookingStatus? Status { get; set; }
@@ -10,6 +11,6 @@ public class GetBookingsByFilterQuery
     public DateOnly? EndDate { get; set; }
 
 
-    public int? PageSize { get; set; } = 10;
-    public int? PageNumber { get; set; } = 1;
+    public int PageNumber { get; set; }
+    public int PageSize { get; set; }
 }
